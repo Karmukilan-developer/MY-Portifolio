@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Karmukilan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coral': '#F4A09C',
+                        'soft-pink': '#F8E8E8',
+                        'warm-beige': '#E8D5C4',
+                        'deep-coral': '#E85A4F'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #F8E8E8 0%, #F4A09C 100%);
+        }
+        .project-content {
+            display: none;
+        }
+        .project-content.active {
+            display: block;
+        }
+        .project-btn.active {
+            background: #E85A4F;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-soft-pink min-h-screen font-sans">
+    <!-- Navigation -->
+    <div class="p-6 md:p-8">
+        <div class="bg-coral rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-100 transition-colors">
+                    KARMUKILAN
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-white hover:text-gray-100 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    <span class="text-white font-medium">PROJECTS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-6 md:px-8 pb-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Projects Navigation -->
+            <div class="gradient-bg rounded-2xl p-8 md:p-12 mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                    Projects
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+                    Explore my portfolio of innovative digital experiences and AI-driven design projects.
+                </p>
+                
+                <!-- Project Buttons -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <button onclick="showProject(1)" class="project-btn active bg-coral text-white font-bold py-4 px-6 rounded-xl hover:bg-deep-coral transition-all duration-300 transform hover:scale-105">
+                        E-Learning Platform
+                    </button>
+                    <button onclick="showProject(2)" class="project-btn bg-coral text-white font-bold py-4 px-6 rounded-xl hover:bg-deep-coral transition-all duration-300 transform hover:scale-105">
+                     IOT Based Smart AI Plant Irrigation System
+                    </button>
+                    <button onclick="showProject(3)" class="project-btn bg-coral text-white font-bold py-4 px-6 rounded-xl hover:bg-deep-coral transition-all duration-300 transform hover:scale-105">
+                       Hall Booking Website
+                    </button>
+                    <button onclick="showProject(4)" class="project-btn bg-coral text-white font-bold py-4 px-6 rounded-xl hover:bg-deep-coral transition-all duration-300 transform hover:scale-105">
+                        Expense Tracker
+                    </button>
+                    
+                </div>
+            </div>
+
+            <!-- Project 1: e learning -->
+            <div id="project1" class="project-content active">
+                <div class="bg-white rounded-2xl p-6 md:p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">E-learning Platform </h2><a href="https://learn-jade-seven.vercel.app/" class="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">
+ <p>Click here 🔗 to visit  website!</p>
+  </a>
+                    <p class="text-lg text-gray-700 mb-6">Empowers students by providing accessible and personalized education with diversity.
+</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">E-Learning</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Collaborative learning</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Interactive Design</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-coral to-deep-coral rounded-2xl h-80 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">&#128218; &#128187; &#128214;</div>
+                            <p class="text-lg font-medium">Cater authorized content <br>in forms of videos, documents.
+</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-soft-pink to-white rounded-2xl h-80 flex items-center justify-center relative">
+                        <div class="w-24 h-24 bg-coral rounded-full opacity-80 absolute top-8 right-8"></div>
+                        <div class="w-16 h-16 bg-deep-coral rounded-full opacity-60 absolute bottom-12 left-12"></div>
+                        <div class="text-gray-700 text-center">
+                            <div class="text-6xl mb-4">&#129485;&#8205;&#127979;</div>
+                            <p class="text-lg font-medium">Improve connection among <br>students, educators, institutions <br>to improve cooperative learning. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Concept</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           	&bull; Emerging a cloud based e-learning platform that promotes inclusivity, encourage interaction with fellow learner and provided with personalized dashboard.<br>	&bull;Providing data which is uploaded by the verified and authenticated profiles such as multifaceted business entities and educational organizations to display current market needs and evolving industry.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Technology</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           This project was developed using HTML for structuring the content, CSS for styling and layout, and JavaScript with the React framework to build a dynamic and interactive user interface.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Impact</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           	&bull; Enhanced Collaborative Learning: Empowers students by providing accessible and personalized education with diversity.
+<br>	&bull;Global Reach: Makes quality education available worldwide, breaking down geographical barriers.
+                        </p>
+                    </div>
+                </div>
+              </div>
+              
+            <!-- Project 2: smart irrigation -->
+            <div id="project2" class="project-content">
+                <div class="bg-white rounded-2xl p-6 md:p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">IOT Based Smart AI Plant Irrigation System</h2>
+                    <p class="text-lg text-gray-700 mb-6">A sophisticated AI-powered platform that transforms text descriptions into stunning visual artwork using advanced neural networks.</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Internet Of Things</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Artificial Intelligence</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">ESP8266 Micro-controller</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl h-80 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">&#127793;</div>
+                            <p class="text-lg font-medium">Adjusts watering based on <br>real-time soil moisture levels.
+</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-400 to-purple-500 rounded-2xl h-80 flex items-center justify-center relative">
+                        <div class="w-20 h-20 bg-white rounded-full opacity-30 absolute top-6 right-6"></div>
+                        <div class="w-12 h-12 bg-yellow-300 rounded-full opacity-40 absolute bottom-8 left-8"></div>
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">&#128167;</div>
+                            <p class="text-lg font-medium">	Reduces water wastage while <br>promoting healthy plant growth.
+</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Innovation</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           The Smart Plant Irrigation System is an IoT-based solution that automates watering using real-time soil moisture data, ensuring efficient water usage and remote monitoring integrated with AI.
+
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Features</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            	&bull;Adjusts watering based on real-time soil moisture levels.<br>	&bull;
+ Enables remote monitoring and control of irrigation schedules.<br>	&bull;
+ Reduces water wastage while promoting healthy plant growth.<br>	&bull;
+Uses AI for accurate weather prediction for watering.
+
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Results</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           	&bull; Uses machine learning to predict optimal watering schedules based on real-time data.<br>	&bull;
+Eliminates the need for manual watering, saving time and labor.<br>	&bull;
+Allows users to set specific moisture thresholds for different plant types.
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Hall booking -->
+            <div id="project3" class="project-content">
+                <div class="bg-white rounded-2xl p-6 md:p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4"> Hall Booking Website</h2>
+                    <p class="text-lg text-gray-700 mb-6">An interactive website that helps to book  a Hall prior to the event.</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Real-time Booking</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Venue Management</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Book Hall Online</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl h-80 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">&#127970; &#128197;</div>
+                            <p class="text-lg font-medium">Hall Booking System<br>
+
+Booking Confirmation</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-400 to-green-500 rounded-2xl h-80 flex items-center justify-center relative">
+                        <div class="w-16 h-16 bg-white rounded-full opacity-20 absolute top-4 right-4"></div>
+                        <div class="w-24 h-24 bg-blue-300 rounded-full opacity-30 absolute bottom-6 left-6"></div>
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">📊</div>
+                            <p class="text-lg font-medium">Facility Booking<br>
+
+Time Slot Booking</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Purpose</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           	&bull; The Hall Booking Website is designed to simplify and streamline the process of reserving event spaces within an institution or organization.<br>	&bull; It allows users to view available halls, select dates and time slots, and request amenities such as projectors, podiums, and microphones—all through a user-friendly interface.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Technology</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Built with React.js and css 
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Impact</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                      	&bull; Efficiency: Reduces manual hall booking paperwork and scheduling conflicts.<br>	&bull;
+Transparency: Everyone can view booked slots and avoid double bookings.<br>	&bull;Accessibility: Runs in a browser, accessible from anywhere, any device.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Expense Tracker-->
+            <div id="project4" class="project-content">
+                <div class="bg-white rounded-2xl p-6 md:p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4"> Expense Tracker</h2>
+                    <p class="text-lg text-gray-700 mb-6">The Expense Tracker is a personal finance management tool built to help users monitor their income, expenses, and remaining balance in real time</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">MERN Stack</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Budget Tracker</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Expense Management</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl h-80 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">	&#128184;&#128176;</div>
+                            <p class="text-lg font-medium">Income & Expense Log</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-400 to-pink-600 rounded-2xl h-80 flex items-center justify-center relative">
+                        <div class="w-20 h-20 bg-white rounded-full opacity-25 absolute top-8 left-8 animate-pulse"></div>
+                        <div class="w-14 h-14 bg-yellow-200 rounded-full opacity-35 absolute bottom-10 right-10 animate-pulse"></div>
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">	&#128200;</div>
+                            <p class="text-lg font-medium">Transaction History</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Purpose</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           
+ 	&bull;Add and categorize expenses<br>	&bull; Track income (e.g., salary)<br>	&bull;Calculate running balance<br>	&bull;View, edit, or delete expense history
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Technology</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                           	&bull;Frontend implemented using React.js <br>
+                          	&bull; Backend was brought to frontend by Node.js and Express.js<br>
+                           	&bull;MongoDB for Database
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Wellness</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                          	&bull; Real-Time Tracking: Users instantly see their updated balance after adding/editing transactions.<br>	&bull;Editable History: Mistakes can be corrected and past entries managed easily.<br> 	&bull;Financial Awareness: Promotes better money habits by visualizing income vs expenses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+           
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-8">
+                <a href="index.html" class="bg-deep-coral text-white font-bold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300">
+                    ← Back to Portfolio
+                </a>
+                <div class="flex space-x-4">
+                    <a href="contact.html" class="text-gray-600 hover:text-deep-coral transition-colors">Contact →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showProject(projectNum) {
+            // Hide all project contents
+            const allProjects = document.querySelectorAll('.project-content');
+            allProjects.forEach(project => {
+                project.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const allButtons = document.querySelectorAll('.project-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected project
+            document.getElementById(`project${projectNum}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Smooth scroll to content
+            document.getElementById(`project${projectNum}`).scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    </script>
+</body>
+</html>

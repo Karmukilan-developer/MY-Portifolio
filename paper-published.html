@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Karmukilan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coral': '#F4A09C',
+                        'soft-pink': '#F8E8E8',
+                        'warm-beige': '#E8D5C4',
+                        'deep-coral': '#E85A4F'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #F8E8E8 0%, #F4A09C 100%);
+        }
+        .project-content {
+            display: none;
+        }
+        .project-content.active {
+            display: block;
+        }
+        .project-btn.active {
+            background: #E85A4F;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-soft-pink min-h-screen font-sans">
+    <!-- Navigation -->
+    <div class="p-6 md:p-8">
+        <div class="bg-coral rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-100 transition-colors">
+                    KARMUKILAN
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-white hover:text-gray-100 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    <span class="text-white font-medium">PAPER PUBLISHED</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-6 md:px-8 pb-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Projects Navigation -->
+            <div class="gradient-bg rounded-2xl p-8 md:p-12 mb-8">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                    Paper Published
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8">
+                    Explore my academic projects, research work, and technical implementations.
+                </p>
+                
+                <!-- Project Buttons -->
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <button onclick="showProject(1)" class="project-btn active bg-coral text-white font-bold py-4 px-6 rounded-xl hover:bg-deep-coral transition-all duration-300 transform hover:scale-105">
+                        Research Paper
+                    </button>
+                    
+                </div>
+            </div>
+
+            <!-- Project 1: Smart Water Irrigation System (Research Paper) -->
+            <div id="project1" class="project-content active">
+                <div class="bg-white rounded-2xl p-6 md:p-8 mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Smart Water Irrigation System</h2>
+                    <p class="text-lg text-gray-700 mb-6">Published research paper on an intelligent irrigation system using IoT sensors and machine learning algorithms to optimize water usage in agriculture.</p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">IoT</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Machine Learning</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Agriculture</span>
+                        <span class="bg-soft-pink px-4 py-2 rounded-full text-sm font-medium text-gray-800">Research</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-2xl h-80 flex items-center justify-center">
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">💧</div>
+                            <p class="text-lg font-medium">Smart Irrigation</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-400 to-green-500 rounded-2xl h-80 flex items-center justify-center relative">
+                        <div class="w-20 h-20 bg-white rounded-full opacity-30 absolute top-8 right-8"></div>
+                        <div class="w-12 h-12 bg-yellow-300 rounded-full opacity-40 absolute bottom-12 left-12"></div>
+                        <div class="text-white text-center">
+                            <div class="text-6xl mb-4">🌱</div>
+                            <p class="text-lg font-medium">Crop Monitoring</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Research Problem</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Traditional irrigation methods lead to water wastage and inconsistent crop yields. This research addresses the need for automated, data-driven irrigation systems that can adapt to soil conditions and weather patterns.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Methodology</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Implemented IoT sensors for soil moisture, temperature, and humidity monitoring. Used machine learning algorithms to predict optimal irrigation schedules based on historical data and real-time conditions.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Results</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Achieved 30% water savings and 25% improvement in crop yield compared to traditional methods. The system demonstrated 95% accuracy in predicting irrigation needs across different crop types.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-warm-beige rounded-2xl p-8 mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Research Process</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">1</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Literature Review</h4>
+                            <p class="text-sm text-gray-600">Analyzed existing irrigation systems and identified research gaps</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">2</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">System Design</h4>
+                            <p class="text-sm text-gray-600">Developed IoT architecture and ML algorithms</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">3</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Implementation</h4>
+                            <p class="text-sm text-gray-600">Built prototype and conducted field testing</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-coral rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-white font-bold text-xl">4</span>
+                            </div>
+                            <h4 class="font-semibold text-gray-800 mb-2">Publication</h4>
+                            <p class="text-sm text-gray-600">Documented findings and published research paper</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-8">
+                <a href="index.html" class="bg-deep-coral text-white font-bold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300">
+                    ← Back to Portfolio
+                </a>
+                <div class="flex space-x-4">
+                    <a href="contact.html" class="text-gray-600 hover:text-deep-coral transition-colors">Contact →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showProject(projectNum) {
+            // Hide all project contents
+            const allProjects = document.querySelectorAll('.project-content');
+            allProjects.forEach(project => {
+                project.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            const allButtons = document.querySelectorAll('.project-btn');
+            allButtons.forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected project
+            document.getElementById(`project${projectNum}`).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+            
+            // Smooth scroll to content
+        }</script>

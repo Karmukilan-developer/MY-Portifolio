@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Karmukilan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coral': '#F4A09C',
+                        'soft-pink': '#F8E8E8',
+                        'warm-beige': '#E8D5C4',
+                        'deep-coral': '#E85A4F'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced Background */
+        body {
+            background: linear-gradient(135deg, #f8f4f0 0%, #f1e8e0 50%, #ead5c7 100%);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(244, 160, 156, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(232, 213, 196, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #F8E8E8 0%, #F4A09C 100%);
+        }
+
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 25px 50px rgba(0,0,0,0.15),
+                0 15px 35px rgba(244, 160, 156, 0.1),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+        }
+
+        .contact-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-2px);
+        }
+
+        .contact-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #F4A09C, #E85A4F);
+            transition: width 0.3s ease;
+        }
+
+        .contact-link:hover::after {
+            width: 100%;
+        }
+
+        .icon-bg {
+            background: linear-gradient(135deg, #E85A4F 0%, #F4A09C 50%, #E85A4F 100%);
+            box-shadow: 
+                0 8px 25px rgba(232, 90, 79, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.2);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(244, 160, 156, 0.3);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-soft-pink min-h-screen font-sans">
+    <!-- Navigation -->
+    <div class="p-6 md:p-8">
+        <div class="bg-coral rounded-2xl p-6 md:p-8">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="text-2xl md:text-3xl font-bold text-white hover:text-gray-100 transition-colors">
+                    KARMUKILAN
+                </a>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-white hover:text-gray-100 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    <span class="text-white font-medium">CONTACT</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="px-6 md:px-8 pb-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Hero Section -->
+            <div class="gradient-bg rounded-2xl p-8 md:p-12 mb-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 text-glow">
+                    Let's Connect
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-6 max-w-3xl mx-auto">
+                    Ready to collaborate? Here are the best ways to reach me for projects, opportunities, or just to say hello.
+                </p>
+                <div class="flex justify-center">
+                    <div class="text-6xl pulse-animation">👋</div>
+                </div>
+            </div>
+
+            <!-- Contact Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Email Card -->
+                <div class="bg-white/90 rounded-2xl p-8 card-hover text-center">
+                    <div class="icon-bg w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Email</h3>
+                    <p class="text-gray-600 mb-6">Drop me a line anytime</p>
+                    <a href="mailto:karmukilan@gmail.com" class="contact-link block bg-gradient-to-r from-coral to-deep-coral text-white font-semibold py-3 px-6 rounded-lg hover:shadow-lg transition-all duration-300">
+                        karmukilannataraj@gmail.com
+                    </a>
+                </div>
+
+                <!-- GitHub Card -->
+                <div class="bg-white/90 rounded-2xl p-8 card-hover text-center">
+                    <div class="bg-gray-800 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">GitHub</h3>
+                    <p class="text-gray-600 mb-6">Check out my projects</p>
+                    <a href="https://github.com/Karmukilan-developer/MY-Portifolio/upload" target="_blank" class="contact-link block bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-700 hover:shadow-lg transition-all duration-300">
+                        github.com/karmukilan-developer
+                    </a>
+                </div>
+
+                <!-- LinkedIn Card -->
+                <div class="bg-white/90 rounded-2xl p-8 card-hover text-center">
+                    <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">LinkedIn</h3>
+                    <p class="text-gray-600 mb-6">Let's connect professionally</p>
+                    <a href="www.linkedin.com/in/
+karmukilan-n-623062333
+Vanity URL name" target="_blank" class="contact-link block bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300">
+                        linkedin.com/in/karmukilan
+                    </a>
+                </div>
+            </div>
+
+            <!-- Additional Info Section -->
+            <div class="bg-gradient-to-r from-coral to-deep-coral rounded-2xl p-8 md:p-12 text-white text-center mb-8">
+                <h2 class="text-3xl font-bold mb-4">Ready to Work Together?</h2>
+                <p class="text-lg mb-6 opacity-90 max-w-2xl mx-auto">
+                    I'm always excited to collaborate on new projects, discuss innovative ideas, or explore opportunities in web development and technology.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Web Development</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Full Stack</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Problem Solving</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-medium">Innovation</span>
+                </div>
+            </div>
+
+            <!-- Response Time Info -->
+            <div class="bg-white/90 rounded-2xl p-6 text-center card-hover">
+                <div class="flex items-center justify-center mb-4">
+                    <div class="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
+                    <span class="text-gray-800 font-semibold">Usually responds within 24 hours</span>
+                </div>
+                <p class="text-gray-600 text-sm">
+                    I check my emails regularly and will get back to you as soon as possible!
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="flex justify-between items-center mt-8">
+                <a href="index.html" class="bg-deep-coral text-white font-bold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300">
+                    ← Back to Portfolio
+                </a>
+                <div class="flex space-x-4">
+                    <a href="skills.html" class="text-gray-600 hover:text-deep-coral transition-colors">← Skills</a>
+                    <a href="projects.html" class="text-gray-600 hover:text-deep-coral transition-colors">Projects →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
