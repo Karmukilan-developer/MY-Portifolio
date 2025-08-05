@@ -113,78 +113,117 @@ welcome to my world"</span> <br>
                 </p>
             </div>
 
-           <!-- Contact Form -->
-<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success" class="space-y-4">
-  <!-- Hidden input for Netlify to recognize the form -->
-  <input type="hidden" name="form-name" value="contact" />
-  
-  <!-- Spam bot field (honeypot) -->
-  <p hidden>
-    <label>Don’t fill this out: <input name="bot-field" /></label>
-  </p>
+            <!-- Contact Button Card -->
+            <div class="gradient-bg rounded-2xl p-8 card-hover shadow-lg">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="text-sm text-gray-600">
+                        Have some<br>questions?
+                    </div>
+                    <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-6">Let's Create Together</h2>
+                
+                <button 
+                    onclick="showContactForm()"
+                    class="w-full bg-deep-coral text-white font-bold py-4 px-8 rounded-lg hover:bg-coral transition-all duration-300 focus:ring-2 focus:ring-deep-coral focus:outline-none text-lg transform hover:scale-105"
+                >
+                    LET'S CONNECT
+                </button>
+            </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    <div>
-      <input 
-        type="text" 
-        name="name" 
-        placeholder="Your Name" 
-        required
-        class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none transition-all"
-      />
+            <!-- Project Cards -->
+            <a href="paper-published.html" class="bg-white rounded-2xl p-4 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Paper Published</h3>
+                <div class="h-24 bg-gradient-to-r from-coral to-warm-beige rounded-lg"></div>
+            </a>
+
+            <a href="skills.html" class="bg-white rounded-2xl p-4 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Skills & Extra-curricular</h3>
+                <div class="h-24 bg-gradient-to-r from-soft-pink to-coral rounded-lg"></div>
+            </a>
+
+            <a href="participation.html" class="bg-white rounded-2xl p-4 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Competitions Participated</h3>
+                <div class="h-24 bg-gradient-to-r from-warm-beige to-deep-coral rounded-lg"></div>
+            </a>
+        </div>
+
+        <!-- Hidden Contact Form (Initially Hidden) -->
+        <div id="contactFormSection" class="hidden max-w-7xl mx-auto mt-8">
+            <div class="gradient-bg rounded-2xl p-8 card-hover shadow-lg">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-3xl font-bold text-gray-800">Get In Touch</h2>
+                    <button 
+                        onclick="hideContactForm()"
+                        class="text-gray-600 hover:text-deep-coral transition-colors text-3xl font-bold w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/50"
+                    >
+                        ×
+                    </button>
+                </div>
+                
+               <!-- Contact Form -->
+<form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="space-y-4">
+    <input type="hidden" name="form-name" value="contact" />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Your Name" 
+                required
+                class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none transition-all"
+            />
+        </div>
+        <div>
+            <input 
+                type="email" 
+                name="email" 
+                placeholder="Your Email" 
+                required
+                class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none transition-all"
+            />
+        </div>
     </div>
     <div>
-      <input 
-        type="email" 
-        name="email" 
-        placeholder="Your Email" 
-        required
-        class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none transition-all"
-      />
+        <input 
+            type="text" 
+            name="subject" 
+            placeholder="Subject" 
+            class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none transition-all"
+        />
     </div>
-  </div>
-
-  <div>
-    <input 
-      type="text" 
-      name="subject" 
-      placeholder="Subject" 
-      class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none transition-all"
-    />
-  </div>
-
-  <div>
-    <textarea 
-      name="message" 
-      rows="4" 
-      placeholder="Tell me about your project or ask me anything..." 
-      required
-      class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none resize-none transition-all"
-    ></textarea>
-  </div>
-
-  <!-- Netlify reCAPTCHA -->
-  <div data-netlify-recaptcha="true"></div>
-
-  <button 
-    type="submit"
-    class="w-full bg-deep-coral text-white font-semibold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300 focus:ring-2 focus:ring-deep-coral focus:outline-none"
-  >
-    Send Message
-  </button>
+    <div>
+        <textarea 
+            name="message" 
+            rows="4" 
+            placeholder="Tell me about your project or ask me anything..." 
+            required
+            class="w-full px-4 py-3 rounded-lg border-0 bg-white/80 backdrop-blur-sm text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-deep-coral focus:outline-none resize-none transition-all"
+        ></textarea>
+    </div>
+    
+    <!-- Netlify reCAPTCHA -->
+    <div data-netlify-recaptcha="true"></div>
+    
+    <button 
+        type="submit"
+        class="w-full bg-deep-coral text-white font-semibold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300 focus:ring-2 focus:ring-deep-coral focus:outline-none"
+    >
+        Send Message
+    </button>
 </form>
-
-
+ </div>
+ </div>
         <!-- Social Links -->
         <div class="max-w-7xl mx-auto mt-8">
             <div class="flex justify-center md:justify-end space-x-6 text-sm text-gray-600">
                 <a href="https://github.com/Karmukilan-developer" class="hover:text-deep-coral transition-colors">GITHUB</a>
-                
-                <a href="www.linkedin.com/in/
-karmukilan-n-623062333/" class="hover:text-deep-coral transition-colors">LINKEDIN</a>
+                <a href="https://www.linkedin.com/in/karmukilan-n-623062333" class="hover:text-deep-coral transition-colors">LINKEDIN</a>
             </div>
         </div>
-    </div>
+   
 
     <script>
         // Show contact form
@@ -212,8 +251,4 @@ karmukilan-n-623062333/" class="hover:text-deep-coral transition-colors">LINKEDI
         });
     </script>
 </body>
-
 </html>
-
-
-
