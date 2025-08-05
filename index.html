@@ -219,3 +219,104 @@ welcome to my world"</span> <br>
                         id="submitBtn"
                         class="w-full bg-deep-coral text-white font-semibold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300 focus:ring-2 focus:ring-deep-coral focus:outline-none"
                    
+>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="max-w-7xl mx-auto mt-8">
+            <div class="flex justify-center md:justify-end space-x-6 text-sm text-gray-600">
+                <a href="https://github.com/Karmukilan-developer" class="hover:text-deep-coral transition-colors">GITHUB</a>
+                <a href="https://www.linkedin.com/in/karmukilan-n-623062333" class="hover:text-deep-coral transition-colors">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize EmailJS
+        emailjs.init('V5emOvK_K0m2swvZ3');
+
+        // Show contact form
+        function showContactForm() {
+            const contactForm = document.getElementById('contactFormSection');
+            contactForm.classList.remove('hidden');
+            contactForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Hide contact form
+        function hideContactForm() {
+            const contactForm = document.getElementById('contactFormSection');
+            contactForm.classList.add('hidden');
+        }
+
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const form = event.target;
+            
+            // Show loading state
+            submitBtn.innerHTML = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Send email using EmailJS
+            emailjs.sendForm('service_7do9ztc', 'template_gsh9glw', form)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showSuccessMessage();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    // Reset button and show error
+                    submitBtn.innerHTML = 'Send Message';
+                    submitBtn.disabled = false;
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                });
+        });
+
+        function showSuccessMessage() {
+            const formSection = document.getElementById('contactFormSection');
+            formSection.innerHTML = `
+                <div class="gradient-bg rounded-2xl p-8 card-hover shadow-lg text-center">
+                    <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Message Sent Successfully!</h2>
+                    <p class="text-gray-600 mb-6">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                    <div class="space-y-4">
+                        <button onclick="resetContactForm()" class="bg-deep-coral text-white font-semibold py-3 px-6 rounded-lg hover:bg-coral transition-colors duration-300">
+                            Send Another Message
+                        </button>
+                        <button onclick="hideContactForm()" class="text-gray-600 hover:text-deep-coral transition-colors">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function resetContactForm() {
+            // Reload the page to reset everything
+            location.reload();
+        }
+
+        // Add smooth hover animations
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.1)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
