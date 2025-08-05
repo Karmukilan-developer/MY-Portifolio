@@ -48,9 +48,9 @@
                 <div class="text-2xl md:text-3xl font-bold text-white">
                     KARMUKILAN
                 </div>
-                <span class="text-sm md:text-base text-white font-medium">
+                <a href="about.html" class="text-sm md:text-base text-white font-medium hover:text-gray-100 transition-colors cursor-pointer">
                     ABOUT
-                </span>
+                </a>
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@ welcome to my world"</span> <br>
     </div>
 </div>
             <!-- Projects Card -->
-            <div class="bg-white rounded-2xl p-6 card-hover shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer">
+            <a href="projects.html" class="bg-white rounded-2xl p-6 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-semibold text-gray-800">PROJECTS</h3>
                     <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,7 +98,7 @@ welcome to my world"</span> <br>
                         <div class="w-8 h-8 bg-coral rounded-full opacity-80"></div>
                     </div>
                 </div>
-            </div>
+            </a>
 
             <!-- Bio Card -->
             <div class="bg-soft-pink rounded-2xl p-6 card-hover shadow-lg relative">
@@ -134,20 +134,20 @@ welcome to my world"</span> <br>
             </div>
 
             <!-- Project Cards -->
-            <div class="bg-white rounded-2xl p-4 card-hover shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer">
+            <a href="paper-published.html" class="bg-white rounded-2xl p-4 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
                 <h3 class="text-lg font-semibold text-gray-800 mb-3">Paper Published</h3>
                 <div class="h-24 bg-gradient-to-r from-coral to-warm-beige rounded-lg"></div>
-            </div>
+            </a>
 
-            <div class="bg-white rounded-2xl p-4 card-hover shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer">
+            <a href="skills.html" class="bg-white rounded-2xl p-4 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
                 <h3 class="text-lg font-semibold text-gray-800 mb-3">Skills & Extra-curricular</h3>
                 <div class="h-24 bg-gradient-to-r from-soft-pink to-coral rounded-lg"></div>
-            </div>
+            </a>
 
-            <div class="bg-white rounded-2xl p-4 card-hover shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer">
+            <a href="participation.html" class="bg-white rounded-2xl p-4 card-hover shadow-lg block transition-all duration-300 hover:shadow-xl">
                 <h3 class="text-lg font-semibold text-gray-800 mb-3">Competitions Participated</h3>
                 <div class="h-24 bg-gradient-to-r from-warm-beige to-deep-coral rounded-lg"></div>
-            </div>
+            </a>
         </div>
 
         <!-- Contact Form Section (Initially Hidden) -->
@@ -164,7 +164,7 @@ welcome to my world"</span> <br>
                 </div>
                 
                 <!-- Contact Form -->
-                <form id="contactForm" class="space-y-4">
+                <form id="contactForm" class="space-y-4" onsubmit="handleFormSubmit(event)">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <input 
