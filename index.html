@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Karmukilan -Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -83,7 +84,7 @@ welcome to my world"</span> <br>
        
     </div>
 </div>
-            <!-- Musea Project -->
+            <!-- Projects Card -->
             <div class="bg-white rounded-2xl p-6 card-hover shadow-lg transition-all duration-300 hover:shadow-xl cursor-pointer">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-semibold text-gray-800">PROJECTS</h3>
@@ -149,7 +150,7 @@ welcome to my world"</span> <br>
             </div>
         </div>
 
-        <!-- Hidden Contact Form (Initially Hidden) -->
+        <!-- Contact Form Section (Initially Hidden) -->
         <div id="contactFormSection" class="hidden max-w-7xl mx-auto mt-8">
             <div class="gradient-bg rounded-2xl p-8 card-hover shadow-lg">
                 <div class="flex justify-between items-center mb-6">
@@ -163,8 +164,7 @@ welcome to my world"</span> <br>
                 </div>
                 
                 <!-- Contact Form -->
-                <form name="contact" method="POST" data-netlify="true" class="space-y-4" onsubmit="handleFormSubmit(event)">
-                    <input type="hidden" name="form-name" value="contact" />
+                <form id="contactForm" class="space-y-4">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <input 
@@ -224,6 +224,9 @@ welcome to my world"</span> <br>
     </div>
 
     <script>
+        // Initialize EmailJS
+        emailjs.init('V5emOvK_K0m2swvZ3');
+
         // Show contact form
         function showContactForm() {
             const contactForm = document.getElementById('contactFormSection');
@@ -237,42 +240,32 @@ welcome to my world"</span> <br>
             contactForm.classList.add('hidden');
         }
 
-        // Handle form submission with AJAX
-        function handleFormSubmit(event) {
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
             
-            const form = event.target;
             const submitBtn = document.getElementById('submitBtn');
-            const formData = new FormData(form);
+            const form = event.target;
             
             // Show loading state
             submitBtn.innerHTML = 'Sending...';
             submitBtn.disabled = true;
             
-            // Submit to Netlify
-            fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            })
-            .then(response => {
-                if (response.ok) {
-                    // Success! Show success message
-                    showInlineSuccessMessage();
-                } else {
-                    throw new Error('Network response was not ok');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Reset button and show error
-                submitBtn.innerHTML = 'Send Message';
-                submitBtn.disabled = false;
-                alert('Sorry, there was an error sending your message. Please try again.');
-            });
-        }
+            // Send email using EmailJS
+            emailjs.sendForm('service_7do9ztc', 'template_gsh9glw', form)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    showSuccessMessage();
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    // Reset button and show error
+                    submitBtn.innerHTML = 'Send Message';
+                    submitBtn.disabled = false;
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                });
+        });
 
-        function showInlineSuccessMessage() {
+        function showSuccessMessage() {
             const formSection = document.getElementById('contactFormSection');
             formSection.innerHTML = `
                 <div class="gradient-bg rounded-2xl p-8 card-hover shadow-lg text-center">
